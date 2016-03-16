@@ -1,8 +1,8 @@
 {
   "name": "react-native-checkbox-field",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Checkbox field component for React Native",
-  "main": "CheckboxField.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive **/*.spec.js"
   },
