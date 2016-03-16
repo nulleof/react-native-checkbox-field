@@ -1,6 +1,6 @@
 {
   "name": "react-native-checkbox-field",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Checkbox field component for React Native",
   "main": "index.js",
   "scripts": {
