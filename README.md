@@ -36,9 +36,9 @@ class CheckboxForm extends React.Component {
     render() {
         const defaultColor = '#fff';
 
+        // Only onSelect prop is required
         return (
             <CheckboxField
-                key={i}
                 label={this.state.fieldLabel}
                 onSelect={this.selectCheckbox}
                 selected={this.state.selected}
