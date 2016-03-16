@@ -36,7 +36,8 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
     checkboxStyle: Styles.checkboxStyle,
     defaultColor: Styles.defaultColor,
-    selectedColor: Styles.selectedColor
+    selectedColor: Styles.selectedColor,
+    onSelect: () => {}
 }
 
 export default Checkbox;
