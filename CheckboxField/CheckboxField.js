@@ -27,15 +27,15 @@ const CheckboxField = (props) => {
 CheckboxField.propTypes = {
     // CheckboxField
     label: React.PropTypes.string,
-    containerStyle: React.PropTypes.object,
-    labelStyle: React.PropTypes.object,
+    containerStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ]),
+    labelStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ]),
 
     // Checkbox
     defaultColor: React.PropTypes.string,
     selectedColor: React.PropTypes.string,
     selected: React.PropTypes.bool,
     onSelect: React.PropTypes.func.isRequired,
-    checkboxStyle: React.PropTypes.object,
+    checkboxStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ]),
     children: React.PropTypes.element
 };
 

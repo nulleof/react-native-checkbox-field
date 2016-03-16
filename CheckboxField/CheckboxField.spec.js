@@ -1,4 +1,4 @@
-import React, { TouchableOpacity, Text, View } from 'react-native';
+import React, { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import { Checkbox, CheckboxField } from '../index.js';
@@ -22,7 +22,16 @@ describe('<CheckboxField />', () => {
     });
 
     it('should accept styles as props', () => {
-        const checkboxField = shallow(<CheckboxField containerStyle={{ backgroundColor: 'red' }} />);
-        expect(checkboxField.find(View).props().style).to.contain({ backgroundColor: 'red' });
+        const styles = StyleSheet.create({
+            container: {
+                backgroundColor: 'red'
+            }
+        });
+
+        const checkboxFieldWithStyle = shallow(<CheckboxField containerStyle={styles.container} />);
+        expect(checkboxFieldWithStyle.find(View).props().style).to.contain({ backgroundColor: 'red' });
+
+        const checkboxFieldWithObject = shallow(<CheckboxField containerStyle={{ backgroundColor: 'red' }} />);
+        expect(checkboxFieldWithObject.find(View).props().style).to.contain({ backgroundColor: 'red' });
     })
 });

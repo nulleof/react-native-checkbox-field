@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
 })
 
 Checkbox.propTypes = {
-    children: React.PropTypes.any,
+    children: React.PropTypes.element,
     defaultColor: React.PropTypes.string,
     selectedColor: React.PropTypes.string,
     selected: React.PropTypes.bool,
     onSelect: React.PropTypes.func.isRequired,
-    checkboxStyle: React.PropTypes.object
+    checkboxStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ])
 };
 
 Checkbox.defaultProps = {
