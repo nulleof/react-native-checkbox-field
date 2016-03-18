@@ -42,4 +42,19 @@ describe('<Checkbox />', () => {
         const checkboxWithObject = shallow(<Checkbox checkboxStyle={{ backgroundColor: 'red' }} />);
         expect(checkboxWithObject.find(TouchableOpacity).props().style).to.contain({ backgroundColor: 'red' });
     });
+
+    it('should default width and height', () => {
+        const checkbox = shallow(<Checkbox />);
+        expect(checkbox.find(TouchableOpacity).props().style).to.contain({ width: 26, height: 26 });
+    });
+
+    it('should allow customizable width and height', () => {
+        const checkbox = shallow(<Checkbox checkboxStyle={{ width: 50, height: 50 }} />);
+        expect(checkbox.find(TouchableOpacity).props().style).to.contain({ width: 50, height: 50 });
+    });
+
+    it('should allow a fluid width and height', () => {
+        const checkbox = shallow(<Checkbox><Text>Fluid Checkbox</Text></Checkbox>);
+        expect(checkbox.find(TouchableOpacity).props().style).to.not.contain({ width: 26, height: 26 });
+    })
 });
