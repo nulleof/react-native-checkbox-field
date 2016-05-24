@@ -1,8 +1,8 @@
 /* @flow */
 'use strict';
 
-import Checkbox from './Checkbox/Checkbox';
-import CheckboxField from './CheckboxField/CheckboxField';
+import Checkbox from './Checkbox';
+import CheckboxField from './CheckboxField';
 
 export {
     Checkbox,

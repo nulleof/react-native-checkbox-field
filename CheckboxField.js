@@ -1,10 +1,11 @@
 /* @flow */
 'use strict';
 
-import React, { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-import Styles from '../Styles';
-import Checkbox from '../Checkbox/Checkbox';
+import Styles from './Styles';
+import Checkbox from './Checkbox';
 
 const CheckboxField = (props) => {
     return (
@@ -53,6 +54,6 @@ CheckboxField.defaultProps = {
     defaultColor: Styles.defaultColor,
     selectedColor: Styles.selectedColor,
     onSelect: () => {}
-}
+};
 
 export default CheckboxField;

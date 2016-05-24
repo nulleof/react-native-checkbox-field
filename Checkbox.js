@@ -1,21 +1,18 @@
 /* @flow */
 'use strict';
 
-import React, { TouchableOpacity, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 
-import Styles from '../Styles';
+import Styles from './Styles';
 
 const Checkbox = (props) => {
     let backgroundColor = {
         backgroundColor: props.selected ? props.selectedColor : props.defaultColor
     };
-    let size = props.children ? {} : {
-        height: props.checkboxStyle.height ? props.checkboxStyle.height : 26,
-        width: props.checkboxStyle.width ? props.checkboxStyle.width : 26,
-    };
 
     return (
-        <TouchableOpacity style={[props.checkboxStyle, backgroundColor, styles.center, size]} onPress={props.onSelect}>
+        <TouchableOpacity style={[props.checkboxStyle, backgroundColor, styles.center]} onPress={props.onSelect}>
             { props.children }
         </TouchableOpacity>
     )
@@ -26,7 +23,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     }
-})
+});
 
 Checkbox.propTypes = {
     children: React.PropTypes.element,
@@ -40,8 +37,7 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
     checkboxStyle: Styles.checkboxStyle,
     defaultColor: Styles.defaultColor,
-    selectedColor: Styles.selectedColor,
-    onSelect: () => {}
-}
+    selectedColor: Styles.selectedColor
+};
 
 export default Checkbox;
