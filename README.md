@@ -1,9 +1,10 @@
 ## React Native Checkbox Field
 
-React Native Checkbox Field is a configurable, stateless React Native component which works on both iOS and Android.
+React Native Checkbox Field is a configurable, stateless React Native component which works on both iOS and Android with minimal dependencies.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Example](#example)
 - [Props](#props)
 - [Credits](#credits)
 
@@ -12,10 +13,11 @@ React Native Checkbox Field is a configurable, stateless React Native component 
 
 ### Usage
 ```javascript
-import React, { View, Text, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { CheckboxField, Checkbox } from 'react-native-checkbox-field';
 
-class CheckboxForm extends React.Component {
+class CheckboxForm extends Component {
     constructor(props) {
         super(props);
 
@@ -73,6 +75,9 @@ const styles = StyleSheet.create({
 });
 ```
 
+### Example
+Example project can be found for both Android and iOS in /examples
+
 ### Props
 #### CheckboxField
 - `label` (String) `null` - The label positioned next to the checkbox
@@ -101,8 +106,6 @@ const styles = StyleSheet.create({
 - `checkboxStyle` (Object)
 ```
 {
-    width: 26,
-    height: 26,
     borderWidth: 2,
     borderColor: '#ddd',
     borderRadius: 5
