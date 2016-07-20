@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
     AppRegistry,
@@ -19,9 +13,9 @@ class example extends Component {
         return (
             <View style={styles.container}>
                 <CheckboxForm />
+                <CheckboxForm labelSide="right" />
                 <CheckboxForm />
-                <CheckboxForm />
-                <CheckboxForm />
+                <CheckboxForm labelSide="right" />
             </View>
         );
     }

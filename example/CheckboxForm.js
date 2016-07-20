@@ -1,10 +1,10 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { CheckboxField, Checkbox } from 'react-native-checkbox-field';
 
-class CheckboxForm extends React.Component {
+class CheckboxForm extends Component {
     constructor(props) {
         super(props);
 
@@ -32,15 +32,27 @@ class CheckboxForm extends React.Component {
                 onSelect={this.selectCheckbox}
                 selected={this.state.selected}
                 defaultColor={defaultColor}
-                selectedColor='#247fd2'
+                selectedColor="#247fd2"
                 containerStyle={styles.containerStyle}
                 labelStyle={styles.labelStyle}
-                checkboxStyle={styles.checkboxStyle}>
+                checkboxStyle={styles.checkboxStyle}
+                labelSide={this.props.labelSide}>
                 <Text style={{ color: defaultColor }}>Y</Text>
             </CheckboxField>
         )
     }
 }
+
+CheckboxForm.propTypes = {
+    labelSide: PropTypes.oneOf([
+        'left',
+        'right'
+    ])
+};
+
+CheckboxForm.defaultProps = {
+    labelSide: 'left'
+};
 
 const styles = StyleSheet.create({
     containerStyle: {

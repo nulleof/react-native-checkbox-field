@@ -1,7 +1,7 @@
 /* @flow */
 'use strict';
 
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 
 import Styles from './Styles';
@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
 });
 
 Checkbox.propTypes = {
-    children: React.PropTypes.element,
-    defaultColor: React.PropTypes.string,
-    selectedColor: React.PropTypes.string,
-    selected: React.PropTypes.bool,
-    onSelect: React.PropTypes.func.isRequired,
-    checkboxStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ])
+    children: PropTypes.element,
+    defaultColor: PropTypes.string,
+    selectedColor: PropTypes.string,
+    selected: PropTypes.bool,
+    onSelect: PropTypes.func.isRequired,
+    checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ])
 };
 
 Checkbox.defaultProps = {

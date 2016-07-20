@@ -45,10 +45,11 @@ class CheckboxForm extends Component {
                 onSelect={this.selectCheckbox}
                 selected={this.state.selected}
                 defaultColor={defaultColor}
-                selectedColor='#247fd2'
+                selectedColor="#247fd2"
                 containerStyle={styles.containerStyle}
                 labelStyle={styles.labelStyle}
-                checkboxStyle={styles.checkboxStyle}>
+                checkboxStyle={styles.checkboxStyle}
+                labelSide="left">
                 <Text style={{ color: defaultColor }}>Y</Text>
             </CheckboxField>
         )
@@ -96,6 +97,7 @@ Example project can be found for both Android and iOS in /examples
     alignItems: 'center'
 }
 ```
+- `labelSide` (enum('left', 'right')) `left` - The side the label will be positioned with the checkbox.
 
 #### Checkbox
 - `onSelect` (Function) `null` - The function that is run when the checkbox is selected

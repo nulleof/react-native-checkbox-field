@@ -1,7 +1,7 @@
 /* @flow */
 'use strict';
 
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Styles from './Styles';
@@ -11,7 +11,11 @@ const CheckboxField = (props) => {
     return (
         <TouchableOpacity onPress={props.onSelect}>
             <View style={props.containerStyle}>
-                <Text style={props.labelStyle}>{ props.label }</Text>
+                {
+                    props.labelSide === 'left' ?
+                        <Text style={props.labelStyle}>{ props.label }</Text>
+                        : null
+                }
                 <Checkbox
                     selected={props.selected}
                     onSelect={props.onSelect}
@@ -20,6 +24,11 @@ const CheckboxField = (props) => {
                     checkboxStyle={props.checkboxStyle}>
                     { props.children }
                 </Checkbox>
+                {
+                    props.labelSide === 'right' ?
+                        <Text style={[props.labelStyle, { textAlign: 'right' }]}>{ props.label }</Text>
+                        : null
+                }
             </View>
         </TouchableOpacity>
     );
@@ -27,17 +36,21 @@ const CheckboxField = (props) => {
 
 CheckboxField.propTypes = {
     // CheckboxField
-    label: React.PropTypes.string,
-    containerStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ]),
-    labelStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ]),
-
+    label: PropTypes.string,
+    containerStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
+    labelStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
+    labelSide: PropTypes.oneOf([
+        'left',
+        'right'
+    ]),
+    
     // Checkbox
-    defaultColor: React.PropTypes.string,
-    selectedColor: React.PropTypes.string,
-    selected: React.PropTypes.bool,
-    onSelect: React.PropTypes.func.isRequired,
-    checkboxStyle: React.PropTypes.oneOfType([ React.PropTypes.number, React.PropTypes.object ]),
-    children: React.PropTypes.element
+    defaultColor: PropTypes.string,
+    selectedColor: PropTypes.string,
+    selected: PropTypes.bool,
+    onSelect: PropTypes.func.isRequired,
+    checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
+    children: PropTypes.element
 };
 
 CheckboxField.defaultProps = {
@@ -53,7 +66,8 @@ CheckboxField.defaultProps = {
     checkboxStyle: Styles.checkboxStyle,
     defaultColor: Styles.defaultColor,
     selectedColor: Styles.selectedColor,
-    onSelect: () => {}
+    onSelect: () => {},
+    labelSide: 'left'
 };
 
 export default CheckboxField;
