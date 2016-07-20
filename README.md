@@ -79,6 +79,8 @@ const styles = StyleSheet.create({
 ### Example
 Example project can be found for both Android and iOS in /examples
 
+![React Native Checkbox Field](example.png?raw=true)
+
 ### Props
 #### CheckboxField
 - `label` (String) `null` - The label positioned next to the checkbox
