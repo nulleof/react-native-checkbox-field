@@ -23,7 +23,6 @@ class CheckboxForm extends Component {
 
         this.state = {
             selected: false,
-            fieldLabel: 'Field A'
         };
 
         this.selectCheckbox = this.selectCheckbox.bind(this);
@@ -41,7 +40,7 @@ class CheckboxForm extends Component {
         // Only onSelect prop is required
         return (
             <CheckboxField
-                label={this.state.fieldLabel}
+                label={<Text>Field A</Text>}
                 onSelect={this.selectCheckbox}
                 selected={this.state.selected}
                 defaultColor={defaultColor}

@@ -13,7 +13,7 @@ const CheckboxField = (props) => {
             <View style={props.containerStyle}>
                 {
                     props.labelSide === 'left' ?
-                        <Text style={props.labelStyle}>{ props.label }</Text>
+                        <View style={props.labelStyle}>{ props.label }</View>
                         : null
                 }
                 <Checkbox
@@ -26,7 +26,7 @@ const CheckboxField = (props) => {
                 </Checkbox>
                 {
                     props.labelSide === 'right' ?
-                        <Text style={[props.labelStyle, { textAlign: 'right' }]}>{ props.label }</Text>
+                        <View style={props.labelStyle}>{ props.label }</View>
                         : null
                 }
             </View>
@@ -36,7 +36,7 @@ const CheckboxField = (props) => {
 
 CheckboxField.propTypes = {
     // CheckboxField
-    label:PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
+    label:PropTypes.object,
     containerStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
     labelStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
     labelSide: PropTypes.oneOf([
