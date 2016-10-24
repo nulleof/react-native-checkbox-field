@@ -9,7 +9,7 @@ React Native Checkbox Field is a configurable, stateless React Native component 
 - [Credits](#credits)
 
 ### Installation
-`npm install --save react-native-checkbox-field`
+`npm install --save https://github.com/nulleof/react-native-checkbox-field.git`
 
 ### Usage
 ```javascript
