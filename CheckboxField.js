@@ -36,7 +36,7 @@ const CheckboxField = (props) => {
 
 CheckboxField.propTypes = {
     // CheckboxField
-    label: PropTypes.string,
+    label:PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]),
     containerStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
     labelStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
     labelSide: PropTypes.oneOf([
