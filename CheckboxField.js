@@ -9,7 +9,7 @@ import Checkbox from './Checkbox';
 
 const CheckboxField = (props) => {
     return (
-        <TouchableOpacity onPress={props.onSelect}>
+        <TouchableOpacity onPress={props.onSelect} disabled={props.disabled}>
             <View style={props.containerStyle}>
                 {
                     props.labelSide === 'left' ?
@@ -18,9 +18,11 @@ const CheckboxField = (props) => {
                 }
                 <Checkbox
                     selected={props.selected}
+                    disabled={props.disabled}
                     onSelect={props.onSelect}
                     defaultColor={props.defaultColor}
                     selectedColor={props.selectedColor}
+                    disabledColor={props.disabledColor}
                     checkboxStyle={props.checkboxStyle}>
                     { props.children }
                 </Checkbox>
@@ -43,10 +45,11 @@ CheckboxField.propTypes = {
         'left',
         'right'
     ]),
-    
+
     // Checkbox
     defaultColor: PropTypes.string,
     selectedColor: PropTypes.string,
+    disabledColor: PropTypes.string,
     selected: PropTypes.bool,
     onSelect: PropTypes.func.isRequired,
     checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
@@ -65,6 +68,7 @@ CheckboxField.defaultProps = {
     },
     checkboxStyle: Styles.checkboxStyle,
     defaultColor: Styles.defaultColor,
+    disabledColor: Styles.disabledColor,
     selectedColor: Styles.selectedColor,
     onSelect: () => {},
     labelSide: 'left'
