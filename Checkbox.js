@@ -33,7 +33,7 @@ Checkbox.propTypes = {
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
     onSelect: PropTypes.func.isRequired,
-    checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ])
+    checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object, PropTypes.array ])
 };
 
 Checkbox.defaultProps = {

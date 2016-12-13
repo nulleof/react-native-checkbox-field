@@ -39,8 +39,8 @@ const CheckboxField = (props) => {
 CheckboxField.propTypes = {
     // CheckboxField
     label: PropTypes.string,
-    containerStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
-    labelStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
+    containerStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object, PropTypes.array ]),
+    labelStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object, PropTypes.array ]),
     labelSide: PropTypes.oneOf([
         'left',
         'right'
@@ -52,7 +52,7 @@ CheckboxField.propTypes = {
     disabledColor: PropTypes.string,
     selected: PropTypes.bool,
     onSelect: PropTypes.func.isRequired,
-    checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object ]),
+    checkboxStyle: PropTypes.oneOfType([ PropTypes.number, PropTypes.object, PropTypes.array ]),
     children: PropTypes.element
 };
 
