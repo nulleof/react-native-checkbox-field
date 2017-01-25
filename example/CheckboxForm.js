@@ -31,6 +31,7 @@ class CheckboxForm extends Component {
                 label={this.state.fieldLabel}
                 onSelect={this.selectCheckbox}
                 selected={this.state.selected}
+                disabled={this.props.disabled}
                 defaultColor={defaultColor}
                 selectedColor="#247fd2"
                 containerStyle={styles.containerStyle}
